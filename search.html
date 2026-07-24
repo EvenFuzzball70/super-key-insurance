@@ -1,0 +1,384 @@
+<!-- Search Products (Refined) -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Super Key Insurance - Search & Filter</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-primary-fixed": "#00174a",
+                        "tertiary-fixed-dim": "#c8c6c2",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#474744",
+                        "surface-variant": "#e1e2e6",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "surface-container-high": "#e6e8ec",
+                        "primary-container": "#2a64e6",
+                        "inverse-primary": "#b4c5ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#002108",
+                        "surface-dim": "#d8dadd",
+                        "secondary": "#006e2c",
+                        "on-surface": "#191c1f",
+                        "surface-container-low": "#f2f4f7",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#2e3134",
+                        "tertiary": "#555551",
+                        "secondary-fixed": "#89fa9b",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1f",
+                        "tertiary-fixed": "#e4e2dd",
+                        "on-tertiary-container": "#f2f0eb",
+                        "background": "#f8f9fd",
+                        "tertiary-container": "#6d6d69",
+                        "outline": "#737686",
+                        "on-secondary-container": "#00722f",
+                        "on-surface-variant": "#434654",
+                        "secondary-container": "#86f898",
+                        "inverse-on-surface": "#eff1f4",
+                        "surface-bright": "#f8f9fd",
+                        "on-primary-fixed-variant": "#003ea7",
+                        "surface": "#f8f9fd",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary-fixed-dim": "#6ddd81",
+                        "surface-container": "#eceef1",
+                        "on-tertiary-fixed": "#1b1c19",
+                        "outline-variant": "#c3c6d7",
+                        "on-primary-container": "#eeefff",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e2e6",
+                        "on-secondary-fixed-variant": "#005320",
+                        "surface-tint": "#0b54d6",
+                        "primary": "#004bc5"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "lg": "48px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "gutter": "20px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "headline-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["26px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                },
+            },
+        };
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        /* Focus visible for accessibility */
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+        /* Reduced motion support */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        /* Touch target minimum */
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        /* Skip link */
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            z-index: 100;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: var(--on-primary);
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 16px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pb-24">
+<!-- Skip link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface-bright dark:bg-inverse-surface shadow-sm z-40">
+<div class="flex justify-between items-center px-margin-mobile py-base w-full">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional headshot of a middle-eastern man in a sharp navy suit, smiling confidently. The lighting is soft and professional, set against a blurred corporate office background in Baghdad. The overall aesthetic is high-end, modern, and trustworthy, reflecting the brand identity of Super Key Insurance with clean lines and soft shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhnjelOFYMuppgUlmt3vpWl4Vux_s5cf_rCkjPgTZZgTPGGgW2wjS0W6JaxNYI7zgaNCusKyF-U0LQ57exdhPxkD-cnmurGskJikkHsr1qSetjoQrY3lo84PvnTRhW-c4xIaz_uxad-85eSXax5m4TZP2OQUba5IgTCpH5HuRq3QKT7-_qt2gCIn19-MPX2oiax2Uj5ecctHItH7SOCzgac3IsfGG4c5Q4lynKB_q2kHzSRqYM9ABagDiGcUY6h53uWMXbbWASGHE"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed">Super Key</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container dark:hover:bg-surface-container-highest transition-colors active:scale-95 touch-target" aria-label="Notifications">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed">notifications</span>
+</button>
+</div>
+</header>
+<main id="main-content" class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop mt-md">
+<!-- Search Section -->
+<section class="mb-md">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline">search</span>
+</div>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none font-body-md text-body-md shadow-sm" placeholder="Search insurance, providers, or policies..." type="text"/>
+</div>
+<!-- Recent Searches -->
+<div class="mt-base flex flex-wrap gap-2 items-center">
+<span class="font-label-md text-label-md text-on-surface-variant">Recent:</span>
+<button class="px-3 py-1 bg-surface-container-low rounded-full font-label-md text-label-md text-primary hover:bg-surface-container-high transition-colors">Comprehensive Auto</button>
+<button class="px-3 py-1 bg-surface-container-low rounded-full font-label-md text-label-md text-primary hover:bg-surface-container-high transition-colors">Health Iraq</button>
+</div>
+</section>
+<!-- Filter Chips -->
+<section class="mb-md overflow-x-auto no-scrollbar">
+<div class="flex gap-base pb-2">
+<button class="flex items-center gap-2 px-6 py-3 bg-primary text-on-primary rounded-full font-headline-sm text-[14px] shadow-md active:scale-95 transition-transform whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">grid_view</span> All
+                </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container text-on-surface rounded-full font-headline-sm text-[14px] hover:bg-surface-container-high transition-colors active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">favorite</span> Life
+                </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container text-on-surface rounded-full font-headline-sm text-[14px] hover:bg-surface-container-high transition-colors active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">directions_car</span> Auto
+                </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container text-on-surface rounded-full font-headline-sm text-[14px] hover:bg-surface-container-high transition-colors active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">medical_services</span> Health
+                </button>
+<button class="flex items-center gap-2 px-6 py-3 bg-surface-container text-on-surface rounded-full font-headline-sm text-[14px] hover:bg-surface-container-high transition-colors active:scale-95 whitespace-nowrap">
+<span class="material-symbols-outlined text-[18px]">flight</span> Travel
+                </button>
+</div>
+</section>
+<!-- Product Grid -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-md">
+<!-- Featured Card 1 -->
+<div class="md:col-span-8 group relative overflow-hidden rounded-lg bg-surface-container-lowest border border-outline-variant shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="h-64 md:h-80 w-full overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A modern, high-tech hospital room in Erbil with advanced medical equipment and a calm, sterile atmosphere. Soft sunlight streams through large windows, creating a sense of hope and safety. The color palette is composed of soft blues, whites, and corporate greens, aligning with a premium health insurance vision for the Iraqi market." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN0fM8bP7ybJBIK6-kF8vtTjbcsJQqOZdvTzo5YKirA4BLlkK_j7kfbwJ7SlVWSk_TN815PVXAdlO6DTjohOsyLWX8e36bfbS3rhSRwcyxE9Ezlu5XUrcwG6AeFFqCBpR36O0rjb3rL8q-V2MG_3xcRbVc5EGuFtlAXNR1gckN1Q7wA69FXzaPZUIXI13pnpZCVfJlrzojalDLF-Imm_vWZqxT03tlPCRxUmXIszX3-VnGQ27ZKzC_4L0iEx_u09QUm7tWlQW8u1w"/>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 bg-secondary-container text-on-secondary-container font-label-md rounded-full">Top Rated</span>
+</div>
+</div>
+<div class="p-md flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-2">
+<h3 class="font-headline-sm text-headline-sm text-primary">Iraqi National Health Elite</h3>
+<div class="flex items-center text-secondary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="ml-1 font-label-md font-bold">4.9</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Comprehensive coverage for families across all Iraqi provinces with access to 500+ private clinics.</p>
+</div>
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+<span class="font-headline-sm text-headline-sm text-primary">Starts at 45,000 IQD/mo</span>
+<button class="w-full sm:w-auto px-8 py-3 bg-primary text-on-primary rounded-lg font-headline-sm text-[16px] hover:brightness-110 active:scale-95 transition-all shadow-sm">View Plan</button>
+</div>
+</div>
+</div>
+<!-- Side Cards -->
+<div class="md:col-span-4 flex flex-col gap-gutter">
+<div class="flex-1 bg-surface-container-low rounded-lg border border-outline-variant p-md shadow-sm hover:shadow-md transition-all">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-12 h-12 bg-white rounded-lg flex items-center justify-center shadow-sm text-primary border border-outline-variant">
+<span class="material-symbols-outlined text-3xl">directions_car</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-primary">Asiacell Partner Policy</h4>
+<p class="font-label-md text-on-surface-variant">Instant Digital Auto</p>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Quick activation through your mobile wallet. Covers accidental damage and third-party liability.</p>
+<div class="pt-4 border-t border-outline-variant flex justify-between items-center">
+<span class="font-headline-sm text-[16px] text-primary">12,500 IQD/mo</span>
+<span class="material-symbols-outlined text-primary">arrow_forward</span>
+</div>
+</div>
+<div class="flex-1 bg-primary text-on-primary rounded-lg p-md shadow-sm relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform duration-500">
+<span class="material-symbols-outlined text-[120px]">verified_user</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Claim Guarantee</h4>
+<p class="font-body-sm text-body-sm text-on-primary-container opacity-90 mb-4">We promise 24-hour claim processing or we pay you back.</p>
+<button class="font-label-md underline decoration-on-primary/30 decoration-2 underline-offset-4">Learn about our promise</button>
+</div>
+</div>
+<!-- List Layout for Other Providers -->
+<div class="md:col-span-12 mt-md">
+<h2 class="font-headline-sm text-headline-sm text-primary mb-md">Other Top Providers</h2>
+<div class="space-y-4">
+<!-- Provider List Item 1 -->
+<div class="flex flex-col sm:flex-row items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A professional minimalist logo for an Iraqi insurance company, featuring geometric shapes inspired by Mesopotamian patterns in navy blue and gold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAlogKpfLE5dDgp8daWUocxDxYdyXykKDogwiqomwr1dSjOHfDSsYY0z3ORCDir-UdJnP8kn0i1k2TawoZUAj9dqauibRi31RSrtsgUgqqq1UWKtXmXTGs3EXQV1L35u_TqM4dBi7w2UszqUrurZwHIbDy1xAQpeHFWa263c54vcJzcNe8eHQwSRDsiMSWsJFWCq4FuuH8u6tb03LK3dW6C3Lwms5xND5u150zCg3fTWlUGQqbru0NFbocBDe8o4-K5-ow0SUigb0Y"/>
+</div>
+<div class="flex-1 text-center sm:text-left">
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1">
+<h4 class="font-headline-sm text-[16px] text-on-surface">Zain Insurance Solutions</h4>
+<span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant rounded text-[10px] uppercase font-bold">Partner</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Specialized travel coverage for religious pilgrimages and international business trips.</p>
+</div>
+<div class="text-center sm:text-right flex flex-col items-center sm:items-end gap-2">
+<span class="font-headline-sm text-[16px] text-primary">From 8,000 IQD</span>
+<div class="flex gap-1">
+<span class="px-2 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-on-surface-variant">LIFE</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-on-surface-variant">TRAVEL</span>
+</div>
+</div>
+</div>
+<!-- Provider List Item 2 -->
+<div class="flex flex-col sm:flex-row items-center gap-4 p-4 bg-surface-container-lowest border border-outline-variant rounded-lg hover:bg-surface-container-low transition-colors cursor-pointer group">
+<div class="w-20 h-20 rounded-lg overflow-hidden flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="A clean, corporate brand identity for a Baghdad-based financial services firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb_BJl8U29U2NJA3RrC01R5cvjT9tvIsvolx_hJD88_vp2hK5pkoM24HnQvFvwHSup552TpJ9CYSk9UzaVLaQ1YuXAk__BMfBxGCSaFMUvU6hN9GQKOx60DGJfrDMZk9NbS455fLy6K4DGl5qiOTIGpuY91r_-w0w4XkP3bmLYE7couUMI6b_7fOOElzJLizEjOdfcSx0583ygo6lhRNnAJdTH2k4e4BS2CUtAlKVpKlv8O_rBTuXmXSlb5m2EqTLxOH1xPXi4MCU"/>
+</div>
+<div class="flex-1 text-center sm:text-left">
+<div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 mb-1">
+<h4 class="font-headline-sm text-[16px] text-on-surface">Al-Ameen General Insurance</h4>
+<span class="px-2 py-0.5 bg-surface-container-high text-on-surface-variant rounded text-[10px] uppercase font-bold">Verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">High-limit protection for luxury vehicles and commercial property in urban centers.</p>
+</div>
+<div class="text-center sm:text-right flex flex-col items-center sm:items-end gap-2">
+<span class="font-headline-sm text-[16px] text-primary">Custom Quote</span>
+<div class="flex gap-1">
+<span class="px-2 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-on-surface-variant">AUTO</span>
+<span class="px-2 py-1 bg-surface-container-high rounded-full text-[10px] font-bold text-on-surface-variant">PROPERTY</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-lg border-t border-surface-container-high flex justify-around items-center px-4 pt-2 touch-target" style="padding-bottom: calc(6px + var(--safe-bottom));">
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="index.html">
+<span class="material-symbols-outlined text-lg">home</span>
+<span class="font-label-md text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary py-2 relative touch-target flex-1" href="quotes.html" aria-current="page">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">compare_arrows</span>
+<span class="font-label-md text-xs">Quotes</span>
+<div class="absolute -top-1 w-1 h-1 rounded-full bg-primary"></div>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="policies.html">
+<span class="material-symbols-outlined text-lg">description</span>
+<span class="font-label-md text-xs">Policies</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="search.html" aria-current="page">
+<span class="material-symbols-outlined text-lg">gavel</span>
+<span class="font-label-md text-xs">Claims</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="#">
+<span class="material-symbols-outlined text-lg">headset_mic</span>
+<span class="font-label-md text-xs">Support</span>
+</a>
+</nav>
+<!-- Desktop Navigation Side Anchors -->
+<div class="hidden md:block fixed left-0 top-0 h-full w-20 lg:w-64 bg-surface-container-lowest border-r border-outline-variant z-30 pt-24">
+<div class="flex flex-col gap-2 p-4">
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors touch-target" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="hidden lg:block font-medium text-body-sm">Home</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors touch-target" href="quotes.html">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="hidden lg:block font-medium text-body-sm">Quotes</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors touch-target" href="policies.html">
+<span class="material-symbols-outlined">description</span>
+<span class="hidden lg:block font-medium text-body-sm">Policies</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-xl bg-primary-fixed-dim text-on-primary-fixed font-bold transition-colors shadow-sm touch-target" href="search.html" aria-current="page">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">gavel</span>
+<span class="hidden lg:block font-bold text-body-sm">Claims</span>
+</a>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors touch-target" href="#">
+<span class="material-symbols-outlined">headset_mic</span>
+<span class="hidden lg:block font-medium text-body-sm">Support</span>
+</a>
+</div>
+</div>
+</div>
+<script>
+        // Micro-interaction for filter chips
+        const filterChips = document.querySelectorAll('section:nth-of-type(2) button');
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                filterChips.forEach(c => {
+                    c.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+                    c.classList.add('bg-surface-container', 'text-on-surface');
+                });
+                chip.classList.remove('bg-surface-container', 'text-on-surface');
+                chip.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+            });
+        });
+
+        // Search Bar Focus Effect
+        const searchInput = document.querySelector('input[type="text"]');
+        searchInput.addEventListener('focus', () => {
+            searchInput.parentElement.classList.add('ring-2', 'ring-primary');
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.parentElement.classList.remove('ring-2', 'ring-primary');
+        });
+    </script>
+</body></html>

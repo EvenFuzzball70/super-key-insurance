@@ -1,0 +1,360 @@
+<!-- My Policies & Documents (Refined) -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Document Management | Super Key Insurance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed": "#00174a",
+                    "tertiary-fixed-dim": "#c8c6c2",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-tertiary-fixed-variant": "#474744",
+                    "surface-variant": "#e1e2e6",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "surface-container-high": "#e6e8ec",
+                    "primary-container": "#2a64e6",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-fixed": "#002108",
+                    "surface-dim": "#d8dadd",
+                    "secondary": "#006e2c",
+                    "on-surface": "#191c1f",
+                    "surface-container-low": "#f2f4f7",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#2e3134",
+                    "tertiary": "#555551",
+                    "secondary-fixed": "#89fa9b",
+                    "on-error-container": "#93000a",
+                    "on-background": "#191c1f",
+                    "tertiary-fixed": "#e4e2dd",
+                    "on-tertiary-container": "#f2f0eb",
+                    "background": "#f8f9fd",
+                    "tertiary-container": "#6d6d69",
+                    "outline": "#737686",
+                    "on-secondary-container": "#00722f",
+                    "on-surface-variant": "#434654",
+                    "secondary-container": "#86f898",
+                    "inverse-on-surface": "#eff1f4",
+                    "surface-bright": "#f8f9fd",
+                    "on-primary-fixed-variant": "#003ea7",
+                    "surface": "#f8f9fd",
+                    "primary-fixed": "#dbe1ff",
+                    "secondary-fixed-dim": "#6ddd81",
+                    "surface-container": "#eceef1",
+                    "on-tertiary-fixed": "#1b1c19",
+                    "outline-variant": "#c3c6d7",
+                    "on-primary-container": "#eeefff",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e1e2e6",
+                    "on-secondary-fixed-variant": "#005320",
+                    "surface-tint": "#0b54d6",
+                    "primary": "#004bc5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.5rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "lg": "48px",
+                    "xl": "80px",
+                    "md": "24px",
+                    "margin-mobile": "16px",
+                    "gutter": "20px",
+                    "xs": "4px",
+                    "sm": "12px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "headline-lg-mobile": ["Inter"],
+                    "body-sm": ["Inter"],
+                    "label-md": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "headline-md": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["26px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "label-md": ["12px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-sm": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fd;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 16px;
+            z-index: 100;
+            padding: 8px 16px;
+            background: var(--primary);
+            color: var(--on-primary);
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: top 0.2s;
+        }
+        .skip-link:focus {
+            top: 16px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        :focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Skip link for accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky bg-surface/80 backdrop-blur-md border-b border-surface-container-high z-40 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md touch-target">
+<div class="flex items-center gap-base">
+<span class="font-headline-md text-headline-md font-bold text-primary">Super Key</span>
+</div>
+<div class="flex items-center gap-md">
+<button class="material-symbols-outlined text-primary hover:bg-surface-container transition-colors p-2 rounded-full active:scale-95 duration-150 touch-target" aria-label="Notifications">
+            notifications
+        </button>
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden border border-outline-variant">
+<img alt="Ahmad Hassan" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATkQCYv_ZQxz-nrwblG4hG7TmN0AAGH_ZZJBT0o21oNW44jslLYOLUt1AVsQsB5V2LA_25Jc6VKwFS2xzXg_MMYdgi_XtL_e2DvA0M0-lhfotFhFrcpVI6j4Eqi9wlmohcqPnZkwni718vmY8XDn8XnnhUY3PlvxqlaFrNTK7S5OWoYJYcC-GYfA0Fyu60h4UwLFL-aLce9mIa5TaRV2Y2rFoN3OdiUEuzVFPfwWwUGljYK6D36Bj1m8aEk7pUjPlHdMWUzRS_RPs"/>
+</div>
+</div>
+</header>
+<main id="main-content" class="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop py-lg pb-32">
+<!-- Dashboard Header -->
+<section class="mb-lg">
+<h1 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-1">Policies & Documents</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage your active coverage and download insurance certificates.</p>
+</section>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md mb-lg">
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Active Policies</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">03</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-low flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">pending_actions</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Renewal Due</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">01</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl border border-outline-variant flex items-center gap-md">
+<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-on-error-container">
+<span class="material-symbols-outlined">event_busy</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase">Expired</p>
+<p class="font-headline-sm text-headline-sm text-on-surface">05</p>
+</div>
+</div>
+</div>
+<!-- Policy Cards Grid -->
+<div class="grid grid-cols-1 gap-md">
+<!-- Policy Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col md:flex-row md:items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start gap-md mb-md md:mb-0">
+<div class="bg-primary-fixed-dim p-3 rounded-lg text-on-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Comprehensive Car</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Policy No: SK-AUTO-99210</p>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center w-fit gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-container"></span>
+                        Active
+                    </span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-base">
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-surface-container text-on-surface-variant font-medium text-body-sm rounded-lg hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                    View Details
+                </button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-on-primary font-medium text-body-sm rounded-lg hover:bg-primary/90 transition-colors active:scale-95 shadow-sm shadow-primary/10">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Download PDF
+                </button>
+</div>
+</div>
+<!-- Policy Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col md:flex-row md:items-center justify-between shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-start gap-md mb-md md:mb-0">
+<div class="bg-primary-fixed-dim p-3 rounded-lg text-on-primary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Home Protection Elite</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Policy No: SK-HOME-44582</p>
+<span class="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md flex items-center w-fit gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-container"></span>
+                        Active
+                    </span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-base">
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-surface-container text-on-surface-variant font-medium text-body-sm rounded-lg hover:bg-surface-container-high transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+                    View Details
+                </button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-on-primary font-medium text-body-sm rounded-lg hover:bg-primary/90 transition-colors active:scale-95 shadow-sm shadow-primary/10">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    Download PDF
+                </button>
+</div>
+</div>
+<!-- Policy Card 3 (Expired State) -->
+<div class="bg-surface-container-lowest rounded-xl border border-outline-variant p-md flex flex-col md:flex-row md:items-center justify-between shadow-sm opacity-90">
+<div class="flex items-start gap-md mb-md md:mb-0">
+<div class="bg-surface-container-high p-3 rounded-lg text-on-surface-variant">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">health_and_safety</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant">Travel Guard Basic</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-2">Policy No: SK-TRAV-11029</p>
+<span class="px-3 py-1 rounded-full bg-error-container text-on-error-container font-label-md text-label-md flex items-center w-fit gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-error-container"></span>
+                        Expired
+                    </span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-base">
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-primary-container text-on-primary-container font-medium text-body-sm rounded-lg hover:bg-primary hover:text-on-primary transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+                    Renew Now
+                </button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 border border-outline-variant text-on-surface-variant font-medium text-body-sm rounded-lg hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[18px]">history</span>
+                    View History
+                </button>
+</div>
+</div>
+<!-- Empty State / Add New -->
+<div class="border-2 border-dashed border-outline-variant rounded-xl p-lg flex flex-col items-center justify-center text-center group cursor-pointer hover:border-primary hover:bg-primary/5 transition-all">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-primary mb-base group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined">add</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-primary">Purchase New Coverage</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Explore tailored insurance plans for your assets.</p>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 w-full z-50 bg-surface/90 backdrop-blur-lg border-t border-surface-container-high flex justify-around items-center px-4 pt-2" style="padding-bottom: calc(6px + var(--safe-bottom));">
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="index.html">
+<span class="material-symbols-outlined text-lg">home</span>
+<span class="font-label-md text-xs">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="quotes.html">
+<span class="material-symbols-outlined text-lg">compare_arrows</span>
+<span class="font-label-md text-xs">Quotes</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary py-2 relative touch-target flex-1" href="policies.html" aria-current="page">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="font-label-md text-xs">Policies</span>
+<div class="absolute -top-1 w-1 h-1 rounded-full bg-primary"></div>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="#">
+<span class="material-symbols-outlined text-lg">gavel</span>
+<span class="font-label-md text-xs">Claims</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant py-2 hover:text-primary transition-all duration-200 active:scale-90 touch-target flex-1" href="#">
+<span class="material-symbols-outlined text-lg">headset_mic</span>
+<span class="font-label-md text-xs">Support</span>
+</a>
+</nav>
+<!-- Desktop Sidebar -->
+<div class="hidden md:block fixed left-0 top-0 h-full w-20 lg:w-64 bg-surface-container-lowest border-r border-outline-variant z-30 pt-24">
+<div class="flex flex-col gap-2 p-4">
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="hidden lg:block font-medium text-body-sm">Home</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors" href="quotes.html">
+<span class="material-symbols-outlined">compare_arrows</span>
+<span class="hidden lg:block font-medium text-body-sm">Quotes</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-xl bg-primary-fixed-dim text-on-primary-fixed font-bold transition-colors shadow-sm" href="policies.html" aria-current="page">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="hidden lg:block font-bold text-body-sm">Policies</span>
+</a>
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">gavel</span>
+<span class="hidden lg:block font-medium text-body-sm">Claims</span>
+</a>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<a class="flex items-center gap-4 p-3 rounded-xl text-on-surface-variant hover:bg-surface-container-low transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="hidden lg:block font-medium text-body-sm">Settings</span>
+</a>
+</div>
+</div>
+</div>
+<script>
+    // Simple mock for "Download PDF" feedback
+    document.querySelectorAll('button').forEach(btn => {
+        if(btn.innerText.includes('Download')) {
+            btn.onclick = function() {
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">refresh</span> Preparing...';
+                btn.disabled = true;
+                setTimeout(() => {
+                    btn.innerHTML = '<span class="material-symbols-outlined text-[18px]">check_circle</span> Ready';
+                    setTimeout(() => {
+                        btn.innerHTML = originalText;
+                        btn.disabled = false;
+                    }, 2000);
+                }, 1500);
+            }
+        }
+    });
+</script>
+</body></html>
